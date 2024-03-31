@@ -1,0 +1,62 @@
+GameName = "Spin A Wheel For UGC EASTER🐇" 
+
+tab1name = "Main" 
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))() 
+
+local GameName = Library:NewWindow(GameName) 
+
+local Tab1 = GameName:NewSection(tab1name) 
+
+Tab1:CreateToggle("Auto Spin", function(value)
+_G.name = value
+while _G.name == true do
+while wait() do
+game:GetService("ReplicatedStorage").spinEvent:FireServer()
+end
+wait(5) 
+end
+end) 
+
+Tab1:CreateButton("Anti Afk", function(value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KazeOnTop/Rice-Anti-Afk/main/Wind", true))()
+end) 
+
+Tab1:CreateButton("Server Hop",
+function(value)
+loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+end)
+local Tab2 = GameName:NewSection("Misc") 
+
+Tab2:CreateButton("Tp To Clouds", function(value)
+game.Players.LocalPlayer.Character:PivotTo(CFrame.new(45.5707932, 414.176544, 297.089111, 0.762955725, -0.0816872194, 0.641268909, -1.73070369e-09, 0.991984129, 0.126362637, -0.646450758, -0.0964090899, 0.756839931))
+end) 
+
+Tab2:CreateButton("Tp To Fountain", function(value)
+game.Players.LocalPlayer.Character:PivotTo(CFrame.new(183.280106, 275.490906, -425.436676, -0.991590679, -0.0446799882, 0.121456198, -4.47153507e-05, 0.93862927, 0.344927698, -0.129413709, 0.342021644, -0.930738032))
+end)
+local Tab2 = GameName:NewSection("Credits") 
+
+Tab2:CreateButton("justrinn", function(value)
+local c=game.Players.LocalPlayer.Character 
+local function a()
+local m=math.huge
+local n
+for _,d in ipairs(workspace:GetDescendants())do
+if(d:IsA("Part")or d:IsA("MeshPart"))and d:FindFirstChild("ProximityPrompt")then
+local e=(d.Position-c.PrimaryPart.Position).Magnitude
+if e<m then
+m=e
+n=d
+end
+end
+end
+if n then
+local r=n.ProximityPrompt
+if r then
+fireproximityprompt(r)
+end
+end
+end
+a()
+end)
